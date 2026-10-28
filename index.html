@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="QuickNotes helps you create and manage notes.">
+    <title>QuickNotes</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="api.js" defer></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-content">
+            <a class="brand" href="./" aria-label="QuickNotes home">QuickNotes</a>
+            <span class="header-label">Simple notes, clearly organized</span>
+        </div>
+    </header>
+
+    <main class="container page-layout">
+        <section class="intro">
+            <p class="eyebrow">YOUR PERSONAL SPACE</p>
+            <h1>Capture what matters.</h1>
+            <p class="intro-copy">Create a note, keep your ideas close, and find them whenever you need them.</p>
+        </section>
+
+        <div class="workspace">
+            <section class="panel create-panel" aria-labelledby="create-heading">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">NEW NOTE</p>
+                        <h2 id="create-heading">Write something down</h2>
+                    </div>
+                </div>
+
+                <form id="note-form">
+                    <div class="field">
+                        <label for="title-input">Title</label>
+                        <input type="text" id="title-input" name="title" maxlength="100"
+                            placeholder="Give your note a title" required>
+                        <span class="field-hint">Up to 100 characters</span>
+                    </div>
+
+                    <div class="field">
+                        <label for="body-input">Note</label>
+                        <textarea id="body-input" name="body" rows="6" placeholder="Start writing here..."
+                            required></textarea>
+                    </div>
+
+                    <button class="button button-primary" type="submit" id="submit-btn">Create note</button>
+                </form>
+            </section>
+
+            <section class="notes-section" aria-labelledby="notes-heading">
+                <div class="notes-topline">
+                    <div>
+                        <p class="eyebrow">YOUR COLLECTION</p>
+                        <h2 id="notes-heading">Your notes <span class="note-count" id="note-count">0</span></h2>
+                    </div>
+                    <button class="button button-secondary" type="button" id="load-btn">Load notes</button>
+                </div>
+
+                <p class="status" id="status" role="status" aria-live="polite">Select “Load notes” to retrieve your
+                    notes.</p>
+                <ul class="notes-list" id="notes-list" aria-label="Notes list"></ul>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>QuickNotes · A REST API practice project</p>
+        </div>
+    </footer>
+</body>
+
+</html>

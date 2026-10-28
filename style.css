@@ -1,0 +1,381 @@
+:root {
+    color-scheme: light;
+    --page: #f5f7fb;
+    --surface: #ffffff;
+    --ink: #182230;
+    --muted: #64748b;
+    --line: #e2e8f0;
+    --primary: #4f46e5;
+    --primary-hover: #4338ca;
+    --primary-soft: #eef2ff;
+    --success: #166534;
+    --success-bg: #f0fdf4;
+    --error: #b91c1c;
+    --error-bg: #fef2f2;
+    --shadow: 0 14px 40px rgba(15, 23, 42, 0.06);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1.6;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+.container {
+    width: min(1080px, calc(100% - 40px));
+    margin-inline: auto;
+}
+
+.site-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+}
+
+.header-content {
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.brand {
+    color: var(--ink);
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    text-decoration: none;
+}
+
+.header-label {
+    color: var(--muted);
+    font-size: 0.875rem;
+}
+
+.page-layout {
+    padding-block: 58px 72px;
+}
+
+.intro {
+    max-width: 660px;
+    margin-bottom: 36px;
+}
+
+.eyebrow {
+    margin: 0 0 8px;
+    color: var(--primary);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+}
+
+h1,
+h2,
+p {
+    margin-top: 0;
+}
+
+h1 {
+    margin-bottom: 12px;
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    letter-spacing: -0.055em;
+    line-height: 1.1;
+}
+
+.intro-copy {
+    max-width: 560px;
+    margin-bottom: 0;
+    color: var(--muted);
+    font-size: 1.05rem;
+}
+
+.workspace {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1.15fr);
+    align-items: start;
+    gap: 28px;
+}
+
+.panel,
+.note-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+}
+
+.create-panel {
+    padding: 26px;
+}
+
+h2 {
+    margin-bottom: 0;
+    font-size: 1.35rem;
+    letter-spacing: -0.035em;
+    line-height: 1.3;
+}
+
+.field {
+    display: grid;
+    gap: 7px;
+    margin-top: 20px;
+}
+
+.field label {
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.field input,
+.field textarea {
+    width: 100%;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    outline: none;
+    background: #fff;
+    color: var(--ink);
+    padding: 12px 13px;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.field input:focus,
+.field textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+}
+
+.field textarea {
+    min-height: 145px;
+    resize: vertical;
+}
+
+.field-hint {
+    color: var(--muted);
+    font-size: 0.78rem;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: 9px 15px;
+    font-size: 0.9rem;
+    font-weight: 750;
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.button-primary {
+    width: 100%;
+    margin-top: 22px;
+    background: var(--primary);
+    color: #fff;
+}
+
+.button-primary:hover:not(:disabled) {
+    background: var(--primary-hover);
+}
+
+.button-secondary {
+    background: #fff;
+    border-color: var(--line);
+    color: var(--ink);
+}
+
+.button-secondary:hover:not(:disabled) {
+    background: var(--primary-soft);
+    border-color: #c7d2fe;
+}
+
+.notes-section {
+    min-width: 0;
+}
+
+.notes-topline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.notes-topline h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.note-count {
+    display: inline-grid;
+    min-width: 27px;
+    height: 27px;
+    place-items: center;
+    border-radius: 999px;
+    background: var(--primary-soft);
+    color: var(--primary);
+    font-size: 0.78rem;
+    letter-spacing: 0;
+}
+
+.status {
+    margin-bottom: 16px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: #fff;
+    color: var(--muted);
+    padding: 11px 13px;
+    font-size: 0.875rem;
+}
+
+.status[data-state="success"] {
+    border-color: #bbf7d0;
+    background: var(--success-bg);
+    color: var(--success);
+}
+
+.status[data-state="error"] {
+    border-color: #fecaca;
+    background: var(--error-bg);
+    color: var(--error);
+}
+
+.notes-list {
+    display: grid;
+    gap: 13px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.note-card {
+    padding: 19px 20px;
+    overflow-wrap: anywhere;
+}
+
+.note-card h3 {
+    margin: 0 0 8px;
+    font-size: 1.03rem;
+    line-height: 1.4;
+}
+
+.note-card p {
+    margin-bottom: 16px;
+    color: var(--muted);
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.note-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.note-id {
+    color: var(--muted);
+    font-size: 0.76rem;
+}
+
+.delete-button {
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    background: #fff;
+    color: var(--error);
+    padding: 6px 10px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.delete-button:hover:not(:disabled) {
+    background: var(--error-bg);
+}
+
+.empty-state {
+    border: 1px dashed #cbd5e1;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.65);
+    color: var(--muted);
+    padding: 28px 18px;
+    text-align: center;
+}
+
+.empty-state p {
+    margin: 0;
+}
+
+.site-footer {
+    border-top: 1px solid var(--line);
+    background: #fff;
+    color: var(--muted);
+    font-size: 0.82rem;
+}
+
+.site-footer .container {
+    padding-block: 20px;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+@media (max-width: 780px) {
+    .page-layout {
+        padding-top: 42px;
+    }
+
+    .workspace {
+        grid-template-columns: 1fr;
+    }
+
+    .create-panel {
+        padding: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: min(100% - 28px, 1080px);
+    }
+
+    .header-label {
+        max-width: 130px;
+        text-align: right;
+        font-size: 0.75rem;
+    }
+
+    .notes-topline {
+        align-items: flex-start;
+    }
+
+    .notes-topline h2 {
+        font-size: 1.2rem;
+    }
+
+    .button-secondary {
+        padding-inline: 10px;
+    }
+}
